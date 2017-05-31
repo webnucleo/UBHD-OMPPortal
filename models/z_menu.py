@@ -12,7 +12,8 @@ if session.forced_language == 'en':
     locale = 'en_US'
 elif session.forced_language == 'de':
     locale = 'de_DE'
-
+elif session.forced_language == 'pt':
+    locale = 'pt_BR'
 
 
 response.title = settings.title
@@ -29,12 +30,13 @@ def title(t):
         T(t))
 
 def category_setting(c, name):
-    return ompdal.getLocalizedCategorySettings(ompdal.getCategoryByPathAndPress(c['path'], press_id).get('category_id'),
-                                               name, locale)['setting_value']
+    get_cat_id = ompdal.getCategoryByPathAndPress(c['path'], press_id).get('category_id')
+    lcs = ompdal.getLocalizedCategorySettings(get_cat_id, name, locale)
+    lc = lcs.get('setting_value', None) if lcs else None
+    return lc
 
 
-category_list = [LI(A(category_setting(c,'title'), _href=URL(
-    'category', '/'.join(['info', c['path']])))) for c in categories.as_list()]
+category_list = [LI(A(category_setting(c,'title'), _href=URL('category', '/'.join(['info', c['path']])))) for c in categories.as_list()]
 
 
 about_us_dict = [['mission_statement', T('Mission Statement')],
@@ -80,12 +82,7 @@ response.menu = UL([LI(A(T('Home'),
                     LI(A(T('Series'),
                          _href=URL('series',
                                    'index'))),
-                    LI(A(T('Journals'),
-                         _href=URL('journals',
-                                   'index'))),
-                    LI(A(T('Campus Media'),
-                         _href=URL('category',
-                                   'info/campusmedia'))),
+                   
                     LI(XML(title('Publishing')),
                        UL(publishing_dict_list,
                           _class="dropdown-menu"),
