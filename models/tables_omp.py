@@ -253,7 +253,7 @@ db.define_table("submissions",
                 Field("series_position", "string"),
                 Field("edited_volume", "integer"),
                 Field("language", "string"),
-                Field("comments_to_ed", "string"),
+                #Field("comments_to_ed", "string"),
                 Field("date_submitted", "string"),
                 Field(
                     "last_modified",
