@@ -2,6 +2,8 @@
 UBHD-OMPPortal is a flexible, responsive Frontend portal for [pkp](https://pkp.sfu.ca/) 's [Open Monograph Press](https://pkp.sfu.ca/omp/)  written in python programming language and  based on the python web framework [web2py](http://www.web2py.com).
 
   * [Demo](#demo)  , [Features](#features),  [Installation](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/docs/INSTALL.md)
+    * Help Links [Use Web2py Framework] (https://www.digitalocean.com/community/tutorials/how-to-use-the-web2py-framework-to-quickly-build-your-python-app#how-to-use-the-web-interface-to-design-your-program); 
+  [Deploy Web2py] (https://www.digitalocean.com/community/tutorials/how-to-deploy-web2py-python-applications-with-uwsgi-and-nginx-on-ubuntu-14-04)
   * Plugins  [Solr Search](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/docs/SOLR.md), [VGWort Pixel Import](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/docs/VGWORT.md)
   * [License](#license) and [Credits](#Credits)
 
